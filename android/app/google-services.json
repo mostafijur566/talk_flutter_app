@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "519885343891",
+    "project_id": "talk-app-database",
+    "storage_bucket": "talk-app-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519885343891:android:1372e61ea67b4a481cd166",
+        "android_client_info": {
+          "package_name": "com.mosta.talk_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519885343891-dheqn91mpu21hhhg6h2tp2ctrq75kead.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mosta.talk_app",
+            "certificate_hash": "2f8b9c792761f8319139b90fabe574722896979f"
+          }
+        },
+        {
+          "client_id": "519885343891-86nlvi70ffqp0ubmtq9s8g6ddi1iafi5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnxx2lFKs7BRlD5o1F5gEc4j0RybFLb0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519885343891-86nlvi70ffqp0ubmtq9s8g6ddi1iafi5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
