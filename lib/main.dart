@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:talk_flutter_app/pages/auth/login_page.dart';
+import 'package:talk_flutter_app/pages/home/home_page.dart';
+import 'package:talk_flutter_app/resourses/auth_method.dart';
 import 'package:talk_flutter_app/utils/app_colors.dart';
 
 void main() async{
@@ -21,7 +23,25 @@ class MyApp extends StatelessWidget {
 
         scaffoldBackgroundColor: AppColors.backgroundColor
       ),
-      home: const LoginPage()
+
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
+      },
+      home: StreamBuilder(
+        stream: AuthMethods().authChanges,
+        builder: (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.waiting){
+            return const Center(child: CircularProgressIndicator(),
+            );
+          }
+          if(snapshot.hasData){
+            return const HomePage();
+          }
+
+          return const LoginPage();
+        },
+      )
     );
   }
 }

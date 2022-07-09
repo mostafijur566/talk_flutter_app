@@ -39,10 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () async{
                   bool res = await _authMethods.signInWithGoogle(context);
                   if (res) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomePage())
-                    );
+                    Navigator.pushNamed(context, '/home');
                   }
                 },
             ),
