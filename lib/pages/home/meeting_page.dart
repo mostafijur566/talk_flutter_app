@@ -10,8 +10,11 @@ class MeetingPage extends StatelessWidget {
 
   final JitsiMeetMethods _jitsiMeetMethods = JitsiMeetMethods();
   createNewMeeting() async{
-    var random = Random();
-    String roomName = (random.nextInt(10000000) + 10000000).toString();
+    const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+    Random _rnd = Random();
+    String getRandomString(int length) => String.fromCharCodes(Iterable.generate(
+        length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+    String roomName = getRandomString(5);
     _jitsiMeetMethods.createMeeting(roomName: roomName, isAudioMuted: true, isVideoMuted: true);
   }
   

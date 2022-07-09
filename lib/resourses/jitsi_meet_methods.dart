@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:jitsi_meet/feature_flag/feature_flag.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:talk_flutter_app/resourses/auth_method.dart';
+
+import 'package:get/get.dart';
 
 class JitsiMeetMethods{
 
@@ -24,7 +27,10 @@ class JitsiMeetMethods{
 
       await JitsiMeet.joinMeeting(options);
     } catch (error) {
-      print("error: $error");
+      Get.snackbar('Oops!', error.toString(),
+        colorText: Colors.white,
+        backgroundColor: Colors.redAccent
+      );
     }
   }
 }
