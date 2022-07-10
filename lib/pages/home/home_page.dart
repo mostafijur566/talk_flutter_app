@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     MeetingPage(),
     const HistoryMeetingPage(),
     const Text('Contacts'),
-    const SettingsPage()
+    SettingsPage()
   ];
 
   @override

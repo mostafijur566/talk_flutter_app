@@ -49,4 +49,16 @@ class AuthMethods {
     }
     return res;
   }
+
+  void signOut() async{
+    try{
+      _auth.signOut();
+    }
+    catch(e){
+      Get.snackbar('Oops!', 'Unable to log out!',
+        colorText: Colors.white,
+        backgroundColor: Colors.redAccent,
+      );
+    }
+  }
 }
