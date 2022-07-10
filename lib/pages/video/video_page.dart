@@ -40,7 +40,12 @@ class _VideoPageState extends State<VideoPage> {
   }
 
   _joinMeeting(){
-    _jitsiMeetMethods.createMeeting(roomName: meetingIdController.text, isAudioMuted: isAudioMuted, isVideoMuted: isVideoMuted, name: nameController.text);
+    _jitsiMeetMethods.createMeeting(
+        roomName: meetingIdController.text,
+        isAudioMuted: isAudioMuted,
+        isVideoMuted: isVideoMuted,
+        name: nameController.text
+    );
   }
 
   @override
