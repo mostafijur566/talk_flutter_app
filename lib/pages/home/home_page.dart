@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:talk_flutter_app/pages/history_meeting/history_meeting_page.dart';
 import 'package:talk_flutter_app/pages/home/meeting_page.dart';
+import 'package:talk_flutter_app/pages/settings/settings_page.dart';
 import 'package:talk_flutter_app/utils/app_colors.dart';
 import 'package:talk_flutter_app/widgets/home_page_button.dart';
 
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     MeetingPage(),
     const HistoryMeetingPage(),
     const Text('Contacts'),
-    const Text('Settings'),
+    const SettingsPage()
   ];
 
   @override

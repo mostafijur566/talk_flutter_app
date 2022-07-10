@@ -20,6 +20,7 @@ dependencies:
   google_sign_in: ^5.4.0
   get: ^4.6.5
   jitsi_meet: ^4.0.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
