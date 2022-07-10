@@ -10,7 +10,13 @@ class JitsiMeetMethods{
 
   final AuthMethods _authMethods = AuthMethods();
 
-  void createMeeting({required String roomName, required bool isAudioMuted, required bool isVideoMuted}) async{
+  void createMeeting({
+    required String roomName,
+    required bool isAudioMuted,
+    required bool isVideoMuted,
+    String name = ''
+  }) async{
+
     try {
       FeatureFlag featureFlag = FeatureFlag();
       featureFlag.welcomePageEnabled = false;
@@ -19,7 +25,7 @@ class JitsiMeetMethods{
       var options = JitsiMeetingOptions(
         room: roomName
       )
-        ..userDisplayName = _authMethods.user.displayName
+        ..userDisplayName = name.isEmpty ? _authMethods.user.displayName : name
         ..userEmail = _authMethods.user.email
         ..userAvatarURL = _authMethods.user.photoURL // or .png
         ..audioMuted = isAudioMuted

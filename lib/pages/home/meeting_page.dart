@@ -1,14 +1,21 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:talk_flutter_app/resourses/jitsi_meet_methods.dart';
 
 import '../../widgets/home_page_button.dart';
 
-class MeetingPage extends StatelessWidget {
+class MeetingPage extends StatefulWidget {
   MeetingPage({Key? key}) : super(key: key);
 
+  @override
+  State<MeetingPage> createState() => _MeetingPageState();
+}
+
+class _MeetingPageState extends State<MeetingPage> {
   final JitsiMeetMethods _jitsiMeetMethods = JitsiMeetMethods();
+
   createNewMeeting() async{
     const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
     Random _rnd = Random();
@@ -17,7 +24,13 @@ class MeetingPage extends StatelessWidget {
     String roomName = getRandomString(5);
     _jitsiMeetMethods.createMeeting(roomName: roomName, isAudioMuted: true, isVideoMuted: true);
   }
-  
+
+  @override
+  void dispose(){
+    super.dispose();
+    JitsiMeet.removeAllListeners();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +45,9 @@ class MeetingPage extends StatelessWidget {
             ),
 
             HomePageButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context, '/video');
+              },
               text: 'Join\nMeeting',
               icon: Icons.add_box_rounded,
             ),
